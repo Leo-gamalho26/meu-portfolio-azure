@@ -4,17 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple CRUD Site</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to the Simple CRUD Site</h1>
-    <p>Current Date and Time (UTC): 2026-04-09 15:06:36</p>
-    <p>User: Leo-gamalho26</p>
-    <h2>CRUD Operations</h2>
-    <ul>
-        <li><button>Add Item</button></li>
-        <li><button>Read Item</button></li>
-        <li><button>Update Item</button></li>
-        <li><button>Delete Item</button></li>
-    </ul>
+    <div class="container">
+        <h1>📋 Simple CRUD Application</h1>
+        <p style="text-align: center; color: #666;">Manage your items easily - Create, Read, Update, Delete</p>
+
+        <!-- Message Container -->
+        <div id="messageContainer"></div>
+
+        <!-- Add/Edit Form Section -->
+        <div class="card">
+            <h2>Add New Item</h2>
+            <form id="crudForm">
+                <div>
+                    <label for="itemName">Item Name *</label>
+                    <input type="text" id="itemName" placeholder="Enter item name" required>
+                </div>
+                <div>
+                    <label for="itemDescription">Description</label>
+                    <input type="text" id="itemDescription" placeholder="Enter item description (optional)">
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button type="button" id="addItemBtn" class="btn-primary">➕ Add Item</button>
+                    <button type="button" id="updateItemBtn" class="btn-primary" style="display: none; background-color: #2196F3;">✏️ Update Item</button>
+                    <button type="button" id="cancelEditBtn" class="btn-secondary" style="display: none; background-color: #f44336; color: white;">❌ Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Items List Section -->
+        <div class="card">
+            <h2>📦 Items List</h2>
+            <div id="itemsList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
